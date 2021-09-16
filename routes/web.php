@@ -25,6 +25,12 @@ Route::get('/posts/{post}', function($post){
         'my_second_post' => 'This is the second post',
     ];
 
+    if(! array_key_exists ($post, $posts)){
+        abort(404, 'Sorry the page doesnt exist');
+    }
+        
+
+
     return view('post', [
         'post' => $posts[$post]]);
 });
