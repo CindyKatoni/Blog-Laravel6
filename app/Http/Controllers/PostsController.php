@@ -7,18 +7,13 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     //Create method show
-    public function show($post)
+    public function show($slug)
     {
-        $posts = [
-                     'my_first_post' => 'This is the first post',
-                     'my_second_post' => 'This is the second post',
-                 ];
-            
-                 if(! array_key_exists ($post, $posts)){
-                     abort(404, 'Sorry the page doesnt exist');
-                 }
+        $post = \DB::table('posts')->where('slug', $slug)->first();
+        // dd($post);
+
                     
-                 return view('post', [
-                     'post' => $posts[$post]]);
+        return view('post', [
+            'post' => $post]);
     }
 }
