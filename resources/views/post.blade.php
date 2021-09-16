@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="/app.css">
-    <script src="/app.js"></script>
+    <title>Posts</title>
 </head>
 <body>
-    <h1>Welcome To Blog</h1>
-    <h2>{{ $name }}</h2>
+    <h1>Welcome To Posts</h1>
+    <p>{{ $post }}</p>
 </body>
 </html>

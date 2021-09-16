@@ -13,6 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     // return view('welcome');
+
+  
+// });
+
+Route::get('/posts/{post}', function($post){
+    $posts = [
+        'my_first_post' => 'This is the first post',
+        'my_second_post' => 'This is the second post',
+    ];
+
+    return view('post', [
+        'post' => $posts[$post]]);
+});
+
+
+
+
+
+
+Route::get('/test', function() {
+    return view('test');
 });
