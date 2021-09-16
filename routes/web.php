@@ -19,21 +19,19 @@ use Illuminate\Support\Facades\Route;
   
 // });
 
-Route::get('/posts/{post}', function($post){
-    $posts = [
-        'my_first_post' => 'This is the first post',
-        'my_second_post' => 'This is the second post',
-    ];
+// Route::get('/posts/{post}', function($post){
+//     $posts = [
+//         'my_first_post' => 'This is the first post',
+//         'my_second_post' => 'This is the second post',
+//     ];
 
-    if(! array_key_exists ($post, $posts)){
-        abort(404, 'Sorry the page doesnt exist');
-    }
+//     if(! array_key_exists ($post, $posts)){
+//         abort(404, 'Sorry the page doesnt exist');
+//     }
         
-
-
-    return view('post', [
-        'post' => $posts[$post]]);
-});
+//     return view('post', [
+//         'post' => $posts[$post]]);
+// });
 
 
 
@@ -43,3 +41,5 @@ Route::get('/posts/{post}', function($post){
 Route::get('/test', function() {
     return view('test');
 });
+
+Route::get('/posts/{post}', 'PostsController@show');
