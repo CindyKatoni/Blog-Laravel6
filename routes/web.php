@@ -58,3 +58,6 @@ Route::get('/article', function () {
 
     return view('article');
 });
+
+Route::get('/specificarticle/{article}', 'ArticlesController@show');
+
