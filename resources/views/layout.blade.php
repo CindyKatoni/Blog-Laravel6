@@ -15,6 +15,7 @@
 					<nav>
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
+                            <li><a href="#two">Article</a></li>
 							<li><a href="#three">Blog With Us</a></li>
 						</ul>
 					</nav>
