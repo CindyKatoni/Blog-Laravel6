@@ -48,3 +48,13 @@ Route::get('/posts/{post}', 'PostsController@show');
 Route::get('/contact', function(){
     return view('contact');
 });
+
+
+
+Route::get('/article', function () {
+    $articles = App\Article::take(3)->latest()->get();
+
+    return $articles;
+
+    return view('article');
+});
