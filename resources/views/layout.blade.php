@@ -9,7 +9,7 @@
     <!-- <script src="/app.js"></script> -->
 </head>
 <body>
-   @yield ('content')
-   @yield ('contc')
+   <!-- @yield ('content')
+   @yield ('contc') -->
 </body>
 </html>
