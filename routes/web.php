@@ -39,7 +39,6 @@ Route::get('/', function(){
 });
 
 
-
 Route::get('/test', function() {
     return view('test');
 });
