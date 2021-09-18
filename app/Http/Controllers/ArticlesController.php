@@ -53,14 +53,37 @@ class ArticlesController extends Controller
         return redirect('/article');
     }
 
-    public function edit()
+
+
+
+
+
+    public function edit($id)
     {
         //Shows a view to edit an existing resource
+        //Find the article associated with the id
+        $article = Article::find($id);
+
+        return view('articles.edit', compact('article'));
     }
 
-    public function update()
+
+
+
+
+
+    public function update($id)
     {
         //Persist the edited resource
+        $article = Article::find($id);
+
+        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
+
+        $article->save();
+
+        return redirect('/article/' .$article->id);
     }
 
     public function delete()
