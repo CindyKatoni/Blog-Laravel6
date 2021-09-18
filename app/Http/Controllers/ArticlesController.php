@@ -13,9 +13,9 @@ class ArticlesController extends Controller
     {
         $articles = Article::take(4)->latest()->get();
 
-        return $articles;
+        // return $articles;
 
-        return view('article');
+        return view('article', compact('articles'));
 
     }
     
@@ -36,11 +36,21 @@ class ArticlesController extends Controller
     public function create()
     {
         //Shows a view to create a new resource
+        return view('articles/create');
     }
 
     public function store()
     {
         //Persist a resource
+        $article = new Article();
+
+        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
+
+        $article->save();
+
+        return redirect('/article');
     }
 
     public function edit()
