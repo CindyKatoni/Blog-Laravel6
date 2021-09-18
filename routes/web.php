@@ -65,3 +65,4 @@ Route::get('/article', 'ArticlesController@index');
 
 Route::get('/article/{article}', 'ArticlesController@show');
 
+ //Using HTTP Verbs for routing
