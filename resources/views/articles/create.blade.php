@@ -12,7 +12,16 @@
                 <label class="label" for="title">Title</label>
 
                 <div class="control">
-                    <input class="input" type="text" name="title" id="title">
+                    <input 
+                    class="input" 
+                    type="text" 
+                    name="title" 
+                    id="title"
+                    value="{{old('title')}}">
+
+                    @error('title')
+                    <p>{{ $errors->first('title')}}</p>
+                    @enderror
                 </div>
             </div>
 
@@ -20,7 +29,16 @@
                 <label class="label" for="excerpt">Excerpt</label>
 
                 <div class="control">
-                    <textarea class="textarea" name="excerpt" id="excerpt" cols="30" rows="10"></textarea>
+                    <textarea 
+                    class="textarea" 
+                    name="excerpt" 
+                    id="excerpt" 
+                    cols="30" 
+                    rows="10">{{old('excerpt')}}</textarea>
+
+                    @error('excerpt')
+                    <p>{{ $errors->first('excerpt')}}</p>
+                    @enderror
                 </div>
             </div>
 
@@ -28,7 +46,16 @@
                 <label class="label" for="body">Body</label>
 
                 <div class="control">
-                    <textarea class="textarea" name="body" id="body" cols="30" rows="10"></textarea>
+                    <textarea 
+                    class="textarea" 
+                    name="body" 
+                    id="body" 
+                    cols="30" 
+                    rows="10">{{old('body')}}</textarea>
+
+                    @error('body')
+                    <p>{{ $errors->first('body')}}</p>
+                    @enderror
                 </div>
             </div>
             <div>

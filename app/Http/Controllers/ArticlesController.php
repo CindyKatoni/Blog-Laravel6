@@ -42,6 +42,12 @@ class ArticlesController extends Controller
     public function store()
     {
         //Persist a resource
+        request()->validate([
+            'title' => ['required', 'min:3', 'max:255'],
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+
         $article = new Article();
 
         $article->title = request('title');
@@ -69,12 +75,15 @@ class ArticlesController extends Controller
 
 
 
-
-
-
     public function update($id)
     {
         //Persist the edited resource
+        request()->validate([
+            'title' => ['required', 'min:3', 'max:255'],
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+        
         $article = Article::find($id);
 
         $article->title = request('title');
