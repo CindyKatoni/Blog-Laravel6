@@ -61,7 +61,10 @@ Route::get('/contact', function(){
 
 
 Route::get('/article', 'ArticlesController@index');
+Route::post('/article', 'ArticlesController@store');
+Route::get('/article/create', 'ArticlesController@create');
+Route::get('/article/{article}', 'ArticlesController@show');\
+Route::get('/article/{article}/edit', 'ArticlesController@edit');
+Route::put('/article/{article}, ArticlesController@update');
 
-
-Route::get('/article/{article}', 'ArticlesController@show');
-
+ //Using HTTP Verbs for routing
