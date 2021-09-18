@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+    //Render a list of a resource
     public function index()
     {
         $articles = Article::take(4)->latest()->get();
@@ -19,7 +20,7 @@ class ArticlesController extends Controller
     }
     
     
-    
+    //Show a single resource
     public function show($articleId)
     {
         
@@ -30,5 +31,30 @@ class ArticlesController extends Controller
         return view('articles.show');
         // dd($article);
 
+    }
+
+    public function create()
+    {
+        //Shows a view to create a new resource
+    }
+
+    public function store()
+    {
+        //Persist a resource
+    }
+
+    public function edit()
+    {
+        //Shows a view to edit an existing resource
+    }
+
+    public function update()
+    {
+        //Persist the edited resource
+    }
+
+    public function delete()
+    {
+        //Delete the resource
     }
 }
