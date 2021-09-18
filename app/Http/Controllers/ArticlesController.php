@@ -21,10 +21,10 @@ class ArticlesController extends Controller
     
     
     //Show a single resource
-    public function show($articleId)
+    public function show($article)
     {
         
-        $article = Article::find($articleId);
+        $article = Article::findOrFail($article);
 
         return $article;
 
@@ -58,7 +58,6 @@ class ArticlesController extends Controller
 
         return redirect('/article');
     }
-
 
 
 
