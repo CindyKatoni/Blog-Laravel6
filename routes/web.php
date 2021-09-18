@@ -39,7 +39,6 @@ Route::get('/', function(){
 });
 
 
-
 Route::get('/test', function() {
     return view('test');
 });
@@ -49,3 +48,16 @@ Route::get('/posts/{post}', 'PostsController@show');
 Route::get('/contact', function(){
     return view('contact');
 });
+
+
+
+Route::get('/article', function () {
+    $articles = App\Article::take(3)->latest()->get();
+
+    return $articles;
+
+    return view('article');
+});
+
+Route::get('/specificarticle/{article}', 'ArticlesController@show');
+
