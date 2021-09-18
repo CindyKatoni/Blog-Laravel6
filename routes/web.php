@@ -51,13 +51,17 @@ Route::get('/contact', function(){
 
 
 
-Route::get('/article', function () {
-    $articles = App\Article::take(3)->latest()->get();
+// Route::get('/article', function () {
+//     $articles = App\Article::take(4)->latest()->get();
 
-    return $articles;
+//     return $articles;
 
-    return view('article');
-});
+//     return view('article');
+// });
 
-Route::get('/specificarticle/{article}', 'ArticlesController@show');
+
+Route::get('/article', 'ArticlesController@index');
+
+
+Route::get('/article/{article}', 'ArticlesController@show');
 
