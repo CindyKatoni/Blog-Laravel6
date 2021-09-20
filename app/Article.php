@@ -21,8 +21,10 @@ class Article extends Model
     }
     
     //an article has many tags
-    public function tage()
+    public function tags()
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    
 }
