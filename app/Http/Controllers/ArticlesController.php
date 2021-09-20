@@ -15,16 +15,16 @@ class ArticlesController extends Controller
 
         // return $articles;
 
-        return view('article', compact('articles'));
+        return view('articles.index', compact('articles'));
 
     }
     
     
     //Show a single resource
-    public function show($articleId)
+    public function show($article)
     {
         
-        $article = Article::find($articleId);
+        $article = Article::findOrFail($article);
 
         return $article;
 
@@ -41,26 +41,17 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        //Persist a resource
-        request()->validate([
-            'title' => ['required', 'min:3', 'max:255'],
+        //Create action saves and creates a resource all in one ego
+        
+
+        Article::create(request()->validate([
+            'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required'
-        ]);
+        ]));
 
-        $article = new Article();
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
-
-        return redirect('/article');
+        return redirect('/articles');
     }
-
-
-
 
 
 
@@ -75,28 +66,30 @@ class ArticlesController extends Controller
 
 
 
-    public function update($id)
+    public function update(Article $article)
     {
-        //Persist the edited resource
-        request()->validate([
-            'title' => ['required', 'min:3', 'max:255'],
+        //Update action edits and saves a resource all in one ego
+        $article->update(request()->validate([
+            'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required'
-        ]);
-        
-        $article = Article::find($id);
+        ]));
 
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
-
-        return redirect('/article/' .$article->id);
+        return redirect('/articles/'.$article->id);
     }
 
     public function delete()
     {
         //Delete the resource
     }
+
+    // protected function validateArticle()
+    // {
+    //     return request()->validate([
+    //         'title' => 'required',
+    //         'excerpt' => 'required',
+    //         'body' => 'required'
+
+    //     ]);
+    // }
 }

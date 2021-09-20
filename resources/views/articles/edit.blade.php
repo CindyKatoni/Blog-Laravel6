@@ -2,7 +2,7 @@
     <div id="page" class="container">
         <h1>Edit Article</h1>
 
-        <form method="PUT" action="/article/{{ $article->id}}" >
+        <form method="PUT" action="/articles/{{ $article->id}}" >
         @csrf
             <div class="field">
                 <label class="label" for="title">Title</label>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div>
-                <button type="submit">SUBMIT</button>
+                <button type="submit">UPDATE</button>
             </div>
         </form>
     </div>
