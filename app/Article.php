@@ -20,4 +20,9 @@ class Article extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
     
+    //an article has many tags
+    public function tage()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
