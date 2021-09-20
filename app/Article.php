@@ -11,4 +11,9 @@ class Article extends Model
     // {
     //     return slug;
     // }
+
+    protected $fillable = ['title', 'excerpt', 'body'];
+
+    //use guarded when you dont want laravel to guard anything
+    // protected $guarded = [];
 }

@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div>
-                <button type="submit">SUBMIT</button>
+                <button type="submit">UPDATE</button>
             </div>
         </form>
     </div>

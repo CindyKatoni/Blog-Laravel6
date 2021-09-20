@@ -41,25 +41,17 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        //Persist a resource
-        request()->validate([
-            'title' => ['required', 'min:3', 'max:255'],
+        //Create action saves and creates a resource all in one ego
+        
+
+        Article::create(request()->validate([
+            'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required'
-        ]);
-
-        $article = new Article();
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
+        ]));
 
         return redirect('/article');
     }
-
-
 
 
 
@@ -74,28 +66,30 @@ class ArticlesController extends Controller
 
 
 
-    public function update($id)
+    public function update(Article $article)
     {
-        //Persist the edited resource
-        request()->validate([
-            'title' => ['required', 'min:3', 'max:255'],
+        //Update action edits and saves a resource all in one ego
+        $article->update(request()->validate([
+            'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required'
-        ]);
-        
-        $article = Article::find($id);
+        ]));
 
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
-
-        return redirect('/article/' .$article->id);
+        return redirect('/article/' . $article->id);
     }
 
     public function delete()
     {
         //Delete the resource
     }
+
+    // protected function validateArticle()
+    // {
+    //     return request()->validate([
+    //         'title' => 'required',
+    //         'excerpt' => 'required',
+    //         'body' => 'required'
+
+    //     ]);
+    // }
 }
