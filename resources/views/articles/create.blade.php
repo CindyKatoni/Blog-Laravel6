@@ -6,7 +6,7 @@
     <div id="page" class="container">
         <h1>New Article</h1>
 
-        <form method="POST" action="/article" >
+        <form method="POST" action="/articles" >
         @csrf
             <div class="field">
                 <label class="label" for="title">Title</label>

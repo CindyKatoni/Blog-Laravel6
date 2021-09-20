@@ -15,7 +15,7 @@ class ArticlesController extends Controller
 
         // return $articles;
 
-        return view('article', compact('articles'));
+        return view('articles.index', compact('articles'));
 
     }
     
@@ -50,7 +50,7 @@ class ArticlesController extends Controller
             'body' => 'required'
         ]));
 
-        return redirect('/article');
+        return redirect('/articles');
     }
 
 
@@ -75,7 +75,7 @@ class ArticlesController extends Controller
             'body' => 'required'
         ]));
 
-        return redirect('/article/' . $article->id);
+        return redirect('/articles/'.$article->id);
     }
 
     public function delete()
