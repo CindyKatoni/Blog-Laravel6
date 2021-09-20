@@ -14,7 +14,8 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
+            $table->foreignId('user_id')->constrained();//New laravel7 syntax
             $table->string('title');
             $table->text('excerpt');
             $table->text('body');
