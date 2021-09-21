@@ -5,9 +5,9 @@
         {!! $article->body !!}
 
         <p>
-        @foreach ($tags as $tag)
-            <a href="#">{{ $tag->name }}</a>
-        #endforeach    
+        @foreach ($article->tags as $tag)
+            <a href="/articles?tag={{ $tag->name }}">{{ $tag->name }}</a>
+        @endforeach    
         </p>
     
     </div>
