@@ -13,8 +13,6 @@ class ArticlesController extends Controller
     {
         $articles = Article::take(4)->latest()->get();
 
-        // return $articles;
-
         return view('articles.index', compact('articles'));
 
     }
@@ -25,8 +23,6 @@ class ArticlesController extends Controller
     {
         
         $article = Article::findOrFail($article);
-
-        // return $article;
 
         return view('articles.show')->with('article' , $article);
         
