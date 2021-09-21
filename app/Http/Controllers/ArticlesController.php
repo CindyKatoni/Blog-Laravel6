@@ -26,10 +26,10 @@ class ArticlesController extends Controller
         
         $article = Article::findOrFail($article);
 
-        return $article;
+        // return $article;
 
-        return view('articles.show');
-        // dd($article);
+        return view('articles.show')->with('article' , $article);
+        
 
     }
 
@@ -55,41 +55,38 @@ class ArticlesController extends Controller
 
 
 
-    public function edit($id)
+    public function edit($article)
     {
         //Shows a view to edit an existing resource
         //Find the article associated with the id
-        $article = Article::find($id);
+        $article = Article::find($article);
 
-        return view('articles.edit', compact('article'));
+        return view('articles.edit')->with('article' , $article);
     }
 
 
 
     public function update(Article $article)
     {
-        //Update action edits and saves a resource all in one ego
+        //Update action edits and saves a resource all in one go
+        
         $article->update(request()->validate([
             'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required'
         ]));
 
-        return redirect('/articles/'.$article->id);
+        
+        return redirect('/articles/' .$article->id);
+
     }
+
+
 
     public function delete()
     {
         //Delete the resource
     }
 
-    // protected function validateArticle()
-    // {
-    //     return request()->validate([
-    //         'title' => 'required',
-    //         'excerpt' => 'required',
-    //         'body' => 'required'
-
-    //     ]);
-    // }
+    
 }
