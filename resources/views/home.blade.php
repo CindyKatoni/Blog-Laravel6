@@ -13,11 +13,27 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+ 
+                    You are logged in, {{ Auth::user()->name }}
+                    <!-- You are logged in, {{ auth()->user()->name }}. -->
+                    <!-- {{ __('You are logged in!') }} -->
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+<!-- @if (Auth::check())
+    Hi, {{ Auth::user->name }}
+@endif     -->
+
+<!-- @auth 
+    Hi, {{ Auth::user->name }}
+@else
+
+@endauth     -->
+
+<!-- @guest
+    Please Sign in..
+@endguest     -->
