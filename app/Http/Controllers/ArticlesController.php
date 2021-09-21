@@ -39,6 +39,8 @@ class ArticlesController extends Controller
     public function create()
     {
         //Shows a view to create a new resource
+        // $tags -> Tag::all();
+        // return view('articles/create', compact('tags'));
         return view('articles/create');
     }
 
