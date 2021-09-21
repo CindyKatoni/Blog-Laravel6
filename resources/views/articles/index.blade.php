@@ -1,6 +1,6 @@
 <div>
     <ul>
-        @foreach ($articles as $article)    
+        @forelse ($articles as $article)    
         <li>
             <h3>
                <a href="/articles/{{ $article->id }}"> {{ $article->title }} </a> 
@@ -8,8 +8,11 @@
             <p>{{ $article->excerpt }}</p>
             <p>{{ $article->body }}</p>
         </li>
-        @endforeach
+        @empty
+        <p>No relevant articles yet.</p>
+        @endforelse
     </ul>
 
 
 </div>
+
