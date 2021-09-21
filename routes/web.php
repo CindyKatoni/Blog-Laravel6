@@ -70,3 +70,6 @@ Route::put('/articles/{article}', 'ArticlesController@update');
  //Using HTTP Verbs for routing
 
  //Using Route names.
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
