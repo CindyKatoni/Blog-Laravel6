@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'PagesController@home');
+// Route::get('/', 'PagesController@home');
 
-// Route::get('/', function(){
-//     return view('welcome');
-// });
+Route::get('/', function(){
+    return view('welcome');
+});
 
 
 Route::get('/test', function() {
