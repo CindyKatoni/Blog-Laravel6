@@ -15,9 +15,9 @@ Route::get('/test', function() {
 
 Route::get('/posts/{post}', 'PostsController@show');
 
-Route::get('/contact', function(){
-    return view('contact');
-});
+// Route::get('/contact', function(){
+//     return view('contact');
+// });
 
 Route::get('/articles', 'ArticlesController@index');
 Route::post('/articles', 'ArticlesController@store');
@@ -25,6 +25,8 @@ Route::get('/articles/create', 'ArticlesController@create');
 Route::get('/articles/{article}', 'ArticlesController@show');
 Route::get('/articles/{article}/edit', 'ArticlesController@edit');
 Route::put('/articles/{article}', 'ArticlesController@update');
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact', 'ContactController@store');
 
  //Using HTTP Verbs for routing
 
