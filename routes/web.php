@@ -33,9 +33,17 @@ use Illuminate\Support\Facades\Route;
 //         'post' => $posts[$post]]);
 // });
 
+//Create service container
+app()->bind('example', function() {
+    return new \App\Example();
+});
+
+//fetch the service using resolve helper function 
 
 Route::get('/', function(){
-    return view('welcome');
+    // return view('welcome');
+    $example = resolve('example');
+    ddd($example);
 });
 
 
