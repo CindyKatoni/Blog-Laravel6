@@ -24,16 +24,3 @@
 </div>
 @endsection
 
-<!-- @if (Auth::check())
-    Hi, {{ Auth::user->name }}
-@endif     -->
-
-<!-- @auth 
-    Hi, {{ Auth::user->name }}
-@else
-
-@endauth     -->
-
-<!-- @guest
-    Please Sign in..
-@endguest     -->
