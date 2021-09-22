@@ -35,7 +35,16 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function(){
-    return view('welcome');
+    // return view('welcome');
+    $container = new \App\Container();
+
+    //To store you can use put,add,bind
+    $container->bind('example', function(){
+        return new \App\Example();
+    });
+
+    ddd($container);
+
 });
 
 
