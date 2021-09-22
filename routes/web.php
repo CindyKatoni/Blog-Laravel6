@@ -38,21 +38,13 @@ use Illuminate\Support\Facades\Route;
 //     return new \App\Example();
 // });
 
-app()->bind('App\Example', function () {
-    $collaborator = new \App\Collaborator();
-    $foo = 'foobar';
 
-    return new \App\Example($collaborate, $foo);
+// Route::get('/', 'PagesController@home');
+
+
+Route::get('/', function(){
+    return view('welcome');
 });
-
-Route::get('/', 'PagesController@home');
-
-
-// Route::get('/', function(App\Example $example){
-// //     // return view('welcome');
-//     // $example = resolve(App\Example::class);
-//     ddd($example);
-// });
 
 
 Route::get('/test', function() {

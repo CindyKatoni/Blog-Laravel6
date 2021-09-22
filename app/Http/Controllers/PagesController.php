@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     
-    public function home(Example $example)
-    {
-        ddd($example);
-    }
+    // public function home(Example $example)
+    // {
+    //     ddd($example);
+    // }
 }
