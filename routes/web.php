@@ -33,6 +33,14 @@ use Illuminate\Support\Facades\Route;
 //         'post' => $posts[$post]]);
 // });
 
+// //Create service container
+// app()->bind('example', function() {
+//     return new \App\Example();
+// });
+
+
+// Route::get('/', 'PagesController@home');
+
 
 Route::get('/', function(){
     return view('welcome');
