@@ -40,11 +40,14 @@ use Illuminate\Support\Facades\Route;
 
 //fetch the service using resolve helper function 
 
-Route::get('/', function(){
-    // return view('welcome');
-    $example = resolve(App\Example::class);
-    ddd($example);
-});
+Route::get('/', 'PagesController@home');
+
+
+// Route::get('/', function(){
+//     // return view('welcome');
+//     // $example = resolve(App\Example::class);
+//     ddd($example);
+// });
 
 
 Route::get('/test', function() {
