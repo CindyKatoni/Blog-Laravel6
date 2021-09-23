@@ -16,9 +16,10 @@ class PaymentReceived extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($amount)
     {
         //
+        $this->amount = $amount;
     }
 
     /**
@@ -29,7 +30,7 @@ class PaymentReceived extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -56,6 +57,7 @@ class PaymentReceived extends Notification
     {
         return [
             //
+            'amount' => $this->amount
         ];
     }
 }
