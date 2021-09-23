@@ -1,3 +1,4 @@
+<!--Markdown Mailable-->
 @component('mail::message')
 # Introduction
 
