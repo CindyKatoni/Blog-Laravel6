@@ -24,4 +24,8 @@ Lorem ipsum dolor sit amet
 
 -here
 
+@component('mail::button', ['url' => 'https://www.lancome-usa.com/'])
+Visit Lancome
+@endcomponent
+
 @endcomponent
