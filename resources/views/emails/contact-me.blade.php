@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,4 +10,18 @@
     <h1>It Works Again!</h1>
     <p>It sounds like you want to hear more about {{ $topic }}</p>
 </body>
-</html>
+</html> -->
+
+@component('mail::message')
+
+#A Heading 
+
+Lorem ipsum dolor sit amet
+
+-A List
+
+-goes
+
+-here
+
+@endcomponent
