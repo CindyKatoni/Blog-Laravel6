@@ -27,7 +27,8 @@ Route::get('/articles/{article}/edit', 'ArticlesController@edit');
 Route::put('/articles/{article}', 'ArticlesController@update');
 Route::get('/contact', 'ContactController@show');
 Route::post('/contact', 'ContactController@store');
-
+Route::get('/payments/create', 'PaymentController@create')->middleware('auth');
+Route::post('/payments/create', 'PaymentController@store')->middleware('auth');
  //Using HTTP Verbs for routing
 
  //Using Route names.
